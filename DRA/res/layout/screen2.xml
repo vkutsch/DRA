@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+<LinearLayout android:weightSum="100"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+    
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/Tutorials"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Tutorials" />
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/Care"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Child Care" />
+
+    </LinearLayout>
+    
+<LinearLayout android:weightSum="100"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+    
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/water"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Water" />
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/food"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Food" />
+
+    </LinearLayout>
+    <LinearLayout android:weightSum="100"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+    
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/electrical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Electrical" />
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/structural"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Structural" />
+
+    </LinearLayout>
+    <LinearLayout android:weightSum="100"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+    
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/labor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Labor" />
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/Money"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Money" />
+
+    </LinearLayout>
+    <LinearLayout android:weightSum="100"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+    
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/Medical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Medical" />
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/Emergency"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=" Emergency" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+        > 
+        <Button
+        android:id="@+id/skip2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Skip" />
+        
+        
+         </LinearLayout>
+        
+    
+</LinearLayout>
