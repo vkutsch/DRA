@@ -19,6 +19,8 @@ public class MainActivity  extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		//hello
+		//world
+		
 		
 		EditText et= (EditText)findViewById(R.id.editText3);
 		EditText et2= (EditText)findViewById(R.id.editText4);
