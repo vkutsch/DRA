@@ -23,7 +23,6 @@ import android.os.Build;
 public class Home extends ActionBarActivity {
 	
 	GoogleMap nMap;
-	//hello there!!!s
 
 	@SuppressLint({ "NewApi", "CutPasteId" })
 	@Override
@@ -75,6 +74,14 @@ public class Home extends ActionBarActivity {
 			
 		}
 	});
+	Button Upload=(Button)findViewById(R.id.Upload);
+	Upload.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent3 = new Intent ("com.example.dra.upload");
+			startActivity(intent3);	
+			
 		
 	}
 
@@ -82,5 +89,5 @@ public class Home extends ActionBarActivity {
 	private MarkerOptions position(LatLng latLng) {
 		// TODO Auto-generated method stub
 		return null;
-	}}
+	}});}}
 		
