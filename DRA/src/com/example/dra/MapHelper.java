@@ -47,6 +47,8 @@ public class MapHelper {
 	 */
 	public void addOfferMarker(LatLng aLocation, String aTitle, String ownerId, Date expiration) {
 	
+		
+		
 		MarkerOptions newMarkerOption = new MarkerOptions().position(aLocation).title(aTitle).snippet("by " + ownerId);
 	
 		// GREEN color icon
