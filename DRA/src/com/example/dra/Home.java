@@ -1,5 +1,7 @@
 package com.example.dra;
 
+import java.util.Date;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -23,8 +25,9 @@ import android.os.Build;
 public class Home extends ActionBarActivity {
 	
 	GoogleMap nMap;
-	//hello there!!!s
-
+	MapHelper mapHelper;
+	
+	
 	@SuppressLint({ "NewApi", "CutPasteId" })
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,12 @@ public class Home extends ActionBarActivity {
 		
 		nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		nMap.setMyLocationEnabled(true);
-		nMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-		nMap.addMarker(new MarkerOptions()
-		        .position(new LatLng(48, 2))
-		        .title("Paris")
-		        .snippet("Needs Water: Input 1300 5 June 14"));
+		
+		mapHelper = new MapHelper(nMap);
+		mapHelper.addNeedMarker(new LatLng(45.76, 4.84), "Need Food in Lyon", "FrenchDude", new Date());
+		mapHelper.addOfferMarker(new LatLng(44.84, 0.58), "Got Cheese in Bordeaux", "Philpe", new Date());
+		
+		
 		
 		//end of one marker 
 		
