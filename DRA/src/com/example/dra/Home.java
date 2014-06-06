@@ -80,6 +80,13 @@ public class Home extends ActionBarActivity {
 		}
 	});
 		
+	Button Upload=(Button)findViewById(R.id.Tutorials);
+	Upload.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent3 = new Intent ("com.example.dra.upload");
+			startActivity(intent3);	
 	}
 
 
