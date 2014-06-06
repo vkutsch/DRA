@@ -14,12 +14,14 @@ import android.support.v4.app.Fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.os.Build;
 
 public class Home extends ActionBarActivity {
@@ -44,54 +46,44 @@ public class Home extends ActionBarActivity {
 		mapHelper.addOfferMarker(new LatLng(44.84, 0.58), "Got Cheese in Bordeaux", "Philpe", new Date());
 		
 		
+		Button Profile=(Button)findViewById(R.id.Profile);
+		Profile.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//TODO Auto-generated method stub
+				Intent intent = new Intent ("com.example.dra.profile");
+				startActivity(intent);	
+				
+			}
+		});
 		
-		//end of one marker 
-		
-		        //.position(new LatLng(45, 111))
-		        //.title("Bozeman"))
-		        //.setSnippet("Needs Electricity: Input 1300 5 June 14");;
-		        	
-		        	
-	//nMap = ((MapFragment) Home().findViewById(R.id.map)).getMap();
-		//nMap.addMarker=(new MarkerOptions()
-		      //  .position(new LatLng(32, 96))
-		       // .title("Dallas"));//
-		
-		
-	Button Profile=(Button)findViewById(R.id.Profile);
-	Profile.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			//TODO Auto-generated method stub
-			Intent intent = new Intent ("com.example.dra.profile");
-			startActivity(intent);	
+		Button Tutorials=(Button)findViewById(R.id.Tutorials);
+		Tutorials.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//TODO Auto-generated method stub
+				Intent intent2 = new Intent ("com.example.dra.tutorials");
+				startActivity(intent2);	
+				
+			}
+		});
 			
-		}
-	});
+		Button Upload=(Button)findViewById(R.id.Upload);
+		Upload.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//TODO Auto-generated method stub
+				Intent intent3 = new Intent ("com.example.dra.upload");
+				startActivity(intent3);	
+			}
+		});
 	
-	Button Tutorials=(Button)findViewById(R.id.Tutorials);
-	Tutorials.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			//TODO Auto-generated method stub
-			Intent intent2 = new Intent ("com.example.dra.tutorials");
-			startActivity(intent2);	
-			
-		}
-	});
-		
-	Button Upload=(Button)findViewById(R.id.Tutorials);
-	Upload.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			//TODO Auto-generated method stub
-			Intent intent3 = new Intent ("com.example.dra.upload");
-			startActivity(intent3);	
-	}
-
+	}  
 
 	private MarkerOptions position(LatLng latLng) {
 		// TODO Auto-generated method stub
 		return null;
-	}}
+	}
+	
+}
 		

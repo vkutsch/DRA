@@ -23,9 +23,25 @@ public class MainActivity  extends Activity {{}{}
 		EditText et= (EditText)findViewById(R.id.editText3);
 		EditText et2= (EditText)findViewById(R.id.editText4);
 
-		Button Enter=(Button)findViewById(R.id.button1);
+		final Button Enter=(Button)findViewById(R.id.button1);
 		final Button Skip=(Button)findViewById(R.id.button2);
 		final Button Sign=(Button)findViewById(R.id.button3);
+		
+		Skip.setOnClickListener(new View.OnClickListener() {	
+			@Override 		
+			 public void onClick(View v) {
+				//TODO Auto-generated method stub
+				Intent intent2 = new Intent ("com.example.dra.screen4");
+				startActivity(intent2);	
+				
+				
+			
+			Sign.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+						//TODO Auto-generated method stub
+						Intent intent = new Intent ("com.example.dra.screen3");
+						startActivity(intent);	
 		
 		
 		Enter.setOnClickListener(new View.OnClickListener() {
@@ -64,26 +80,12 @@ public class MainActivity  extends Activity {{}{}
 							
 	
 		
-		Skip.setOnClickListener(new View.OnClickListener() {	
-		@Override 		
-		 public void onClick(View v) {
-			//TODO Auto-generated method stub
-			Intent intent2 = new Intent ("com.example.dra.screen4");
-			startActivity(intent2);	
 			
-			
-		
-		Sign.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-					//TODO Auto-generated method stub
-					Intent intent = new Intent ("com.example.dra.screen3");
-					startActivity(intent);	
-					
-				}
-			});
+				
+			}
+			}});
 
-};});};}{;;};});}}
+      };});};{;;};});};}
 
 
 				

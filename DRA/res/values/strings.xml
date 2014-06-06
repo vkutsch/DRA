@@ -50,6 +50,8 @@
       <string name="hc_toggle_label">Access</string>
       
       <string name="nomap_error">Error: target map not found</string>
+    <string name="str_hnt_lat">Enter Latitude</string>
+    <string name="str_hnt_lng">Enter Longitude</string>
    
  
 </resources>
