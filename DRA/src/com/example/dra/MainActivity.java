@@ -12,25 +12,21 @@ import android.widget.EditText;
 
 
 
-public class MainActivity  extends Activity {
+public class MainActivity  extends Activity {{}{}
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		//hello
-		//world
+	
 		
 		
 		EditText et= (EditText)findViewById(R.id.editText3);
 		EditText et2= (EditText)findViewById(R.id.editText4);
 
 		Button Enter=(Button)findViewById(R.id.button1);
-		Button Skip=(Button)findViewById(R.id.button2);
-		Button Sign=(Button)findViewById(R.id.button3);
+		final Button Skip=(Button)findViewById(R.id.button2);
+		final Button Sign=(Button)findViewById(R.id.button3);
 		
-		
-		//2. set the click listener to run code//
 		
 		Enter.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -38,31 +34,35 @@ public class MainActivity  extends Activity {
 				//TODO Auto-generated method stub
 				
 				EditText et = (EditText)findViewById(R.id.editText3);
-			    String password= et.getText().toString();
+			    String username= et.getText().toString();
 				
-				et.getEditableText().toString();
-				if (password.equals("cadet1se")) {
-				Intent intent = new Intent ("com.example.dra.screen4");
-				startActivity(intent);	
+			
+				EditText et2= (EditText)findViewById(R.id.editText4);
+			     String password= et2.getText().toString();
+				et2.getEditableText().toString();
+				if ((username.equals("cadet1se")) && (password.equals("password"))){
+					
+				
+					Intent intent = new Intent ("com.example.dra.screen4");
+					startActivity(intent);	
+		
+				
+			
 				
 				}else{
 					
 					
 					AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-					builder.setTitle("Please try again");
-					builder.setMessage("Please try again!");
+					builder.setTitle("Error");
+					builder.setMessage("Invalid Username or Password");
 					builder.setPositiveButton("ok", null);
 					AlertDialog dialog = builder.show();
-						
 					
-				}
-			
 				
-				//Intent intent = new Intent ("com.example.dra.screen4");
-				//startActivity(intent);	
 				
-			}
-		});
+					
+							
+	
 		
 		Skip.setOnClickListener(new View.OnClickListener() {	
 		@Override 		
@@ -71,8 +71,7 @@ public class MainActivity  extends Activity {
 			Intent intent2 = new Intent ("com.example.dra.screen4");
 			startActivity(intent2);	
 			
-		}
-		});
+			
 		
 		Sign.setOnClickListener(new View.OnClickListener() {
 		@Override
@@ -84,4 +83,8 @@ public class MainActivity  extends Activity {
 				}
 			});
 
-}}
+};});};}{;;};});}}
+
+
+				
+				
