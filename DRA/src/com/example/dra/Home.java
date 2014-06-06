@@ -22,54 +22,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.os.Build;
 
-@SuppressLint({ "NewApi", "CutPasteId" })
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_home);
-	//super.onCreate(savedInstanceState);
-    //setContentView(R.layout.activity_main);
+public class Home extends ActionBarActivity {
 	
-	nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-	nMap.setMyLocationEnabled(true);
-	
-	mapHelper = new MapHelper(nMap);
-	mapHelper.addNeedMarker(new LatLng(45.76, 4.84), "Need Food in Lyon", "FrenchDude", new Date());
-	mapHelper.addOfferMarker(new LatLng(44.84, 0.58), "Got Cheese in Bordeaux", "Philpe", new Date());
+	GoogleMap nMap;
+	MapHelper mapHelper;
 	
 	
-	
-	//end of one marker 
-	
-	        //.position(new LatLng(45, 111))
-	        //.title("Bozeman"))
-	        //.setSnippet("Needs Electricity: Input 1300 5 June 14");;
-	        	
-	        	
-//nMap = ((MapFragment) Home().findViewById(R.id.map)).getMap();
-	//nMap.addMarker=(new MarkerOptions()
-	      //  .position(new LatLng(32, 96))
-	       // .title("Dallas"));//
-	
-	
-Button Profile=(Button)findViewById(R.id.Profile);
-Profile.setOnClickListener(new View.OnClickListener() {
+	@SuppressLint({ "NewApi", "CutPasteId" })
 	@Override
-	public void onClick(View v) {
-		//TODO Auto-generated method stub
-		Intent intent = new Intent ("com.example.dra.profile");
-		startActivity(intent);	
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
+		//super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
 		
-	}
-});
-
-Button Tutorials=(Button)findViewById(R.id.Tutorials);
-Tutorials.setOnClickListener(new View.OnClickListener() {
-	@Override
-	public void onClick(View v) {
-		//TODO Auto-generated method stub
-		Intent intent2 = new Intent ("com.example.dra.tutorials");
-		startActivity(intent2);	
+		nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		nMap.setMyLocationEnabled(true);
 		
 		mapHelper = new MapHelper(nMap);
 		mapHelper.addNeedMarker(new LatLng(45.76, 4.84), "Need Food in Lyon", "FrenchDude", new Date());
@@ -77,7 +45,46 @@ Tutorials.setOnClickListener(new View.OnClickListener() {
 		
 		
 		
-	}
-});
+		//end of one marker 
+		
+		        //.position(new LatLng(45, 111))
+		        //.title("Bozeman"))
+		        //.setSnippet("Needs Electricity: Input 1300 5 June 14");;
+		        	
+		        	
+	//nMap = ((MapFragment) Home().findViewById(R.id.map)).getMap();
+		//nMap.addMarker=(new MarkerOptions()
+		      //  .position(new LatLng(32, 96))
+		       // .title("Dallas"));//
+		
+		
+	Button Profile=(Button)findViewById(R.id.Profile);
+	Profile.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent = new Intent ("com.example.dra.profile");
+			startActivity(intent);	
+			
+		}
+	});
 	
-}
+	Button Tutorials=(Button)findViewById(R.id.Tutorials);
+	Tutorials.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent2 = new Intent ("com.example.dra.tutorials");
+			startActivity(intent2);	
+			
+		}
+	});
+		
+	}
+
+
+	private MarkerOptions position(LatLng latLng) {
+		// TODO Auto-generated method stub
+		return null;
+	}}
+		
