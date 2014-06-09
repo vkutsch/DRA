@@ -23,27 +23,25 @@ public class MainActivity  extends Activity {{}{}
 		EditText et= (EditText)findViewById(R.id.editText3);
 		EditText et2= (EditText)findViewById(R.id.editText4);
 
-		final Button Enter=(Button)findViewById(R.id.button1);
-		final Button Skip=(Button)findViewById(R.id.button2);
-		final Button Sign=(Button)findViewById(R.id.button3);
+     
+     Button Skip=(Button)findViewById(R.id.button2);
+	 Button Sign=(Button)findViewById(R.id.button3);
+	 Button Enter=(Button)findViewById(R.id.button1);
 		
 		Skip.setOnClickListener(new View.OnClickListener() {	
 			@Override 		
 			 public void onClick(View v) {
 				//TODO Auto-generated method stub
 				Intent intent2 = new Intent ("com.example.dra.screen4");
-				startActivity(intent2);	
-				
-				
+				startActivity(intent2);
 			
-			Sign.setOnClickListener(new View.OnClickListener() {
+		Sign.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 						//TODO Auto-generated method stub
-						Intent intent = new Intent ("com.example.dra.screen3");
-						startActivity(intent);	
-		
-		
+						Intent intent3 = new Intent ("com.example.dra.screen3");
+						startActivity(intent3);
+						
 		Enter.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

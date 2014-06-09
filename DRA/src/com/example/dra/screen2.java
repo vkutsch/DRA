@@ -27,6 +27,8 @@ public class screen2  extends Activity {
 		Button Medical =(Button)findViewById(R.id.Medical);
 		Button Emergency =(Button)findViewById(R.id.Emergency);
 		Button Skip =(Button)findViewById(R.id.skip2);
+		Button Upload=(Button)findViewById(R.id.upload);
+		Button Profile=(Button)findViewById(R.id.myprofile);
 	
 		//2. set the click listener to run code//
 		
@@ -137,5 +139,25 @@ public class screen2  extends Activity {
 		//TODO Auto-generated method stub
 		Intent intent11 = new Intent ("com.example.dra.home");
 		startActivity(intent11);	
+		
+		
+		}
+		});
+		
+		Upload.setOnClickListener(new View.OnClickListener() {	
+		@Override 		
+		 public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent12 = new Intent ("com.example.dra.upload");
+			startActivity(intent12);	
 			
+		}
+		});
+		
+		Profile.setOnClickListener(new View.OnClickListener() {	
+		@Override 		
+		 public void onClick(View v) {
+			//TODO Auto-generated method stub
+			Intent intent13 = new Intent ("com.example.dra.profile");
+			startActivity(intent13);	
 }});}};
