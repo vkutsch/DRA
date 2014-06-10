@@ -60,6 +60,7 @@
     <string name="need_prompt">Select a Need</string>
  
     <string-array name="need_arrays">
+        <item>Request Classification</item>
         <item>Child Care</item>
         <item>Food</item>
         <item>Electrical</item>

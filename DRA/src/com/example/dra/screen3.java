@@ -20,13 +20,15 @@ public class screen3  extends Activity {
 
 
        Button Enter=(Button)findViewById(R.id.enter);
+   
 
        Enter.setOnClickListener(new View.OnClickListener() {
     	   
 	@Override
 	public void onClick(View v) {
 		//TODO Auto-generated method stub
-		
+		Intent intent = new Intent ("com.example.dra.home");
+		startActivity(intent);	
 		
 	
 		

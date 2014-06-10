@@ -2,6 +2,8 @@ package com.example.dra;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Vector;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -18,9 +20,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapHelper {
 
 	/*
-	 * The google map we are managing
+	 * The google map we are currently rendering to...
 	 */
-	GoogleMap nMap;	
+	static GoogleMap nMap;	
+	
+	/*
+	 * This is a data structure that stores all of the objects  
+	 */
+	static HashMap<String, MarkerOptions> theRealMap;
 	
 	/*
 	 * This method updates the map based on the current location.
@@ -30,8 +37,10 @@ public class MapHelper {
 	 * We may need to control the zoom of the camera so we can never see above a certain zoom
 	 * (avoids clutter)
 	 */
-	public void updateMap(CameraPosition cp) {
+	public static void updateMap() {
 		
+		
+		if(theRealMap == null) return;
 		//TODO:  Get the extent of the camera
 		//- Query parse and get a list of markers in that extent
 		//- Ensure query factors latency/expiration
@@ -40,23 +49,43 @@ public class MapHelper {
 		
 		//For now: just plot and leave everything on map
 		
+		//Iterate over the HashMap and replot everything!
+		for (Entry<String, MarkerOptions> entry : theRealMap.entrySet()) {
+		    String key = entry.getKey();
+		    MarkerOptions value = (MarkerOptions) entry.getValue();
+		    nMap.addMarker(value);
+		    
+		}
+		
+	}
+	
+	/*
+	 * Make a key for the hashmap so its the same recipe every time
+	 */
+	private static String makeKey(LatLng aLocation, String aTitle, String ownerId){
+		return ""+ aLocation.latitude + aLocation.longitude + aTitle + ownerId;
 	}
 	
 	/*
 	 * Add a new offer marker at prescribed location, with title, and associated with ownerId
 	 */
-	public void addOfferMarker(LatLng aLocation, String aTitle, String ownerId, Date expiration) {
+	public static void addOfferMarker(LatLng aLocation, String aTitle, String ownerId, Date expiration) {
 	
+		if(theRealMap == null) {
+			theRealMap = new HashMap<String, MarkerOptions>();
+		}
 		
 		
-		MarkerOptions newMarkerOption = new MarkerOptions().position(aLocation).title(aTitle).snippet("by " + ownerId);
-	
+		MarkerOptions newMarkerOption = new MarkerOptions().position(aLocation).title(aTitle).snippet("by " + ownerId + " (expires:" + expiration.toString() +")");
+		
 		// GREEN color icon
 		newMarkerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
 
 		//Add to map
 		Marker newMarker = nMap.addMarker(newMarkerOption);
 		
+		theRealMap.put(makeKey(aLocation, aTitle, ownerId), newMarkerOption);
+		
 		//TODO: Add to parse.com  
 		
 	}
@@ -64,16 +93,23 @@ public class MapHelper {
 	/*
 	 * Add a new need marker at prescribed location, with title, and associated with ownerId
 	 */
-	public void addNeedMarker(LatLng aLocation, String aTitle, String ownerId, Date expiration) {
+	public static void addNeedMarker(LatLng aLocation, String aTitle, String ownerId, Date expiration) {
 		
-		MarkerOptions newMarkerOption = new MarkerOptions().position(aLocation).title(aTitle).snippet("by " + ownerId);
+		if(theRealMap == null) {
+			theRealMap = new HashMap<String, MarkerOptions>();
+		}
+		
+		
+		MarkerOptions newMarkerOption = new MarkerOptions().position(aLocation).title(aTitle).snippet("by " + ownerId + " (expires:" + expiration.toString() +")");
 		
 		// Changing marker icon
 		newMarkerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.caution));
 		
 		//Add to map
 		Marker newMarker = nMap.addMarker(newMarkerOption);
-		
+
+		theRealMap.put(makeKey(aLocation, aTitle, ownerId), newMarkerOption);
+
 		//TODO: Add to parse.com  
 	}
 	
@@ -81,7 +117,7 @@ public class MapHelper {
 	/*
 	 * Add a new need marker at prescribed location, with title, and associated with ownerId
 	 */
-	public void removeMarker(Marker theDeletedMarker) {
+	public static void removeMarker(Marker theDeletedMarker) {
 		
 		//TODO:  Check ownership
 		
@@ -90,18 +126,17 @@ public class MapHelper {
 		//TODO:  Remove from parse
 	}
 	
-	/**
-	 * Create a new MapHelper.
-	 * 
-	 * @param theMap:  The google map object in the layout.
-	 */
-	public MapHelper(GoogleMap theMap) {
+	
+	public static void setMap(GoogleMap theMap) {
 		nMap = theMap;
 		
-		//Add default need marker...
-		this.addNeedMarker(new LatLng(40.69847032728747, -73.9514422416687), "Test Need NYC", "thirsty1", new Date() );
-		
-		this.addOfferMarker(new LatLng(41.324, -74.187), "Water Monroe NY", "hendo", new Date() );
+	}
+	
+	/**
+	 * Static class..disable
+	 * @param theMap:  The google map object in the layout.
+	 */
+	private MapHelper(GoogleMap theMap) {
 		
 		
 	}

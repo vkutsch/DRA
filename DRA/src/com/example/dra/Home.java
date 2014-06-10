@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -27,8 +28,24 @@ import android.os.Build;
 public class Home extends ActionBarActivity {
 	
 	GoogleMap nMap;
-	MapHelper mapHelper;
 	
+	@SuppressLint({ "NewApi", "CutPasteId" })
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//setContentView(R.layout.activity_home);
+		
+		//nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		//SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+		MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+
+
+
+		nMap.setMyLocationEnabled(true);
+		MapHelper.setMap(nMap);
+		MapHelper.updateMap();
+		
+	}
 	
 	@SuppressLint({ "NewApi", "CutPasteId" })
 	@Override
@@ -38,12 +55,27 @@ public class Home extends ActionBarActivity {
 		//super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 		
-		nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-		nMap.setMyLocationEnabled(true);
+		//nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		//SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+		MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
 		
-		mapHelper = new MapHelper(nMap);
-		mapHelper.addNeedMarker(new LatLng(45.76, 4.84), "Need Food in Lyon", "FrenchDude", new Date());
-		mapHelper.addOfferMarker(new LatLng(44.84, 0.58), "Got Cheese in Bordeaux", "Philpe", new Date());
+		
+		if (savedInstanceState == null) {
+	        // First incarnation of this activity.
+	        mapFragment.setRetainInstance(true);
+	        nMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+	    } else {
+	        // Reincarnated activity. The obtained map is the same map instance in the previous
+	        // activity life cycle. There is no need to reinitialize it.
+	        nMap = mapFragment.getMap();
+	    }
+		
+		nMap.setMyLocationEnabled(true);
+		MapHelper.setMap(nMap);
+		MapHelper.updateMap();
+		//MapHelper.addNeedMarker(new LatLng(45.76, 4.84), "Food", "Victim3", new Date());
+		//MapHelper.addOfferMarker(new LatLng(44.84, 0.58), "Food", "Philpe5", new Date());
+		
 		
 		
 		Button Profile=(Button)findViewById(R.id.Profile);

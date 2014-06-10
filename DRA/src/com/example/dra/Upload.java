@@ -2,6 +2,7 @@ package com.example.dra;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
@@ -50,7 +51,7 @@ public class Upload extends FragmentActivity {
     GoogleMap nMap;
 	MapHelper mapHelper;
 	Spinner spin;
-	DatePicker date;
+	DatePicker datePicker;
 	
  
     @SuppressLint("NewApi")
@@ -58,10 +59,30 @@ public class Upload extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.upload);
-        nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        //nMap= ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		
+		MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+		
+		
+		if (savedInstanceState == null) {
+	        // First incarnation of this activity.
+	        mapFragment.setRetainInstance(true);
+	        nMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+	    } else {
+	        // Reincarnated activity. The obtained map is the same map instance in the previous
+	        // activity life cycle. There is no need to reinitialize it.
+	        nMap = mapFragment.getMap();
+	    }
+		
+		//Tell the map Helper to render on a new canvas
+		MapHelper.setMap(nMap);
+		
+		//Update the map.  For now use a null camera position...
+		MapHelper.updateMap();
+		
 		nMap.setMyLocationEnabled(true);
 		
-		mapHelper = new MapHelper(nMap);
+		
         etLat = (EditText)findViewById(R.id.et_lat);
         //TODO:  Do we need to check these??
         etLng = (EditText)findViewById(R.id.et_lng);
@@ -79,14 +100,24 @@ public class Upload extends FragmentActivity {
         
         Button bUpload=(Button)findViewById(R.id.upload1);
         spin = (Spinner) findViewById(R.id.spinner1);
-        date= (DatePicker)findViewById(R.id.datePicker1);
-        
+        datePicker= (DatePicker)findViewById(R.id.datePicker1);
+        int day = datePicker.getDayOfMonth();
+        int month = datePicker.getMonth();
+        int year =  datePicker.getYear();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+
+        Date theDate = calendar.getTime();
         
         //Hide calendar view
         
         
-        UploadClickListener uploadCL = new UploadClickListener(bUpload, this, mapHelper,profile, username, "spinner-see below", date);
-        bUpload.setOnClickListener(uploadCL);}
+        UploadClickListener uploadCL = new UploadClickListener(bUpload, this,profile, username, "spinner-see below",theDate);
+        bUpload.setOnClickListener(uploadCL);
+        
+    
+    }
     
     
     
