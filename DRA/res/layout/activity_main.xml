@@ -71,21 +71,24 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Enter" />
+                android:text="Enter"
+                />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Skip Login" />
+                android:text="Skip Login" 
+                />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sign up" />
+                android:text="Sign up" 
+                />
         </LinearLayout>
 
  </ScrollView>

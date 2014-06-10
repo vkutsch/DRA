@@ -86,7 +86,7 @@
         android:id="@+id/Money"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Money" />
+        android:text="Monetary" />
 
     </LinearLayout>
     <LinearLayout android:weightSum="100"
@@ -124,6 +124,17 @@
         
         
          </LinearLayout>
-        
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload a New Location" />
+
+    <Button
+        android:id="@+id/myprofile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="My Profile" />
     
 </LinearLayout>

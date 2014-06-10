@@ -54,4 +54,21 @@
     <string name="str_hnt_lng">Enter Longitude</string>
    
  
+
+ 
+   
+    <string name="need_prompt">Select a Need</string>
+ 
+    <string-array name="need_arrays">
+        <item>Child Care</item>
+        <item>Food</item>
+        <item>Electrical</item>
+        <item>Medical</item>
+        <item>Emergency</item>
+        <item>Labor</item>
+        <item>Structural</item>
+        <item>Water</item>
+    </string-array>
+ 
 </resources>
+
