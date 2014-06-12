@@ -24,4 +24,16 @@
         <item name="android:padding">16dp</item>
     </style>
 
+
+<style name="Theme.AppBaseTheme" parent="@android:style/Theme.Light">
+    <item name="android:textColorPrimary">#295055</item>
+    <item name="android:textColorSecondary">#295055</item>
+    <item name="android:textColorTertiary">#295055</item>
+    <item name="android:textColorPrimaryInverse">#295055</item>
+    <item name="android:textColorSecondaryInverse">#295055</item>
+    <item name="android:textColorTertiaryInverse">#295055</item>
+
+     </style>
+
+
 </resources>

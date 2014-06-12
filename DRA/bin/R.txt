@@ -697,6 +697,7 @@ int style TextAppearance_AppCompat_Widget_PopupMenu_Large 0x7f090032
 int style TextAppearance_AppCompat_Widget_PopupMenu_Small 0x7f090033
 int style TextAppearance_Widget_AppCompat_Base_ExpandedMenu_Item 0x7f090066
 int style TextAppearance_Widget_AppCompat_ExpandedMenu_Item 0x7f09002c
+int style Theme_AppBaseTheme 0x7f090092
 int style Theme_AppCompat 0x7f09007b
 int style Theme_AppCompat_Base_CompactMenu 0x7f090087
 int style Theme_AppCompat_Base_CompactMenu_Dialog 0x7f090088

@@ -80,6 +80,9 @@ public class MainActivity  extends Activity {
 		
 		Intent intent = new Intent ("com.example.dra.screen4");
 		startActivity(intent);	
+		
+		
+
 	
 	}
 }

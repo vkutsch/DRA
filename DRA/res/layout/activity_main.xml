@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.dra.activity_main" >
 
-    <!-- Login progress -->
     
     <LinearLayout android:id="@+id/login_status"
         android:layout_width="wrap_content"
@@ -44,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.43"
                 android:gravity="center"
-                android:text="Disaster Relief Application" />
+                android:text="Disaster Relief Application"
+                 />
 
             <EditText
                 android:id="@+id/editText3"
@@ -72,6 +72,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Enter"
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
                 />
 
             <Button
@@ -80,6 +82,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Skip Login" 
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
                 />
 
             <Button
@@ -88,6 +92,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Sign up" 
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
                 />
         </LinearLayout>
 
